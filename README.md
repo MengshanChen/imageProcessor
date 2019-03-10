@@ -3,7 +3,7 @@
 **Author**: Mengshan Chen <br/>
 
 ## A high level overview of the full system
-
+![architecture](https://user-images.githubusercontent.com/38142465/54092585-1676bf80-434b-11e9-93b5-a931cd17398d.png)
 
 ## Description of the architecture
 Since transformation should run quickly and the users do not need to wait for a long time, the architecture will focus on using the server memory to run API service. Here is the flow: Clients will send requests with a image and a list of image transforms as part of the HTTP body through HTTPS to the server. The server receives the request and calls API to identify the operations in the request and execute the transforms in order on the in-memory image. At last, the server sends the image back through HTTPS so that the client can download it. 
