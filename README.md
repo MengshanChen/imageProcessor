@@ -27,17 +27,25 @@ This is a REST API which is based on the HTTP protocol.
    type: "file" <br />
 *	Responses: <br />
 	* 200 (Success) <br />
-  * 400 (Bad request)<br />
+  	* 400 (Bad request)<br />
 
 The file called "swagger.json" covers more details. 
 
 ## Sample Code 
+(please view the following files)<br />
 - Main files: “server.py” and “client.py” 
   * server.py: covers the API design
   * client.py describes the format of requests, and how to send requests to the server. 
 - Demo files: 
   * demo.py: a web application to test the functionality that serves as a proof of concept
   * index.html: UI
+  
+## Display
+- After run main files: <br />
+  ![Run](https://user-images.githubusercontent.com/38142465/54092613-6eadc180-434b-11e9-9297-b8f9b8123766.png)
+  
+- After run the demos: <br />
+  ![demo](https://user-images.githubusercontent.com/38142465/54092641-c4826980-434b-11e9-9515-d191b03ded33.png)
   
 ## Specification
 The API covers seven transforms. The client can combine operations into a string, and each one is separated by a comma without spaces and capitals. Also, each one should follow the following formats.  <br />
