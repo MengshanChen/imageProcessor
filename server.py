@@ -69,19 +69,19 @@ def main():
     img.save(destination)
     return send_from_directory("static/db", filename)
 
-#flip the image
+# flip horizontal or vertical
 def flip(mode, img, sourceFile):
     if mode == 'h':
         img = img.transpose(Image.FLIP_LEFT_RIGHT)
-        print("flip ho succeed")
+        print("flip horizontal succeed")
     elif mode == 'v':
         img = img.transpose(Image.FLIP_TOP_BOTTOM)
-        print("flip ve succeed")
+        print("flip vertical succeed")
     else:
         abort(400)
     return img
 
-#rotate image
+#rotate left, right or angle
 def rotate(angle, img, sourceFile):
     print(angle)
     #img = img.rotate(-1*int(angle),resample=0, expand=True)
@@ -98,7 +98,7 @@ def rotate(angle, img, sourceFile):
 #grayscale
 def color(img, sourceFile):
     img = img.convert(mode="L")
-    print("grey succeed")
+    print("grayscale succeed")
     return img
 
 #thumbnail
@@ -107,22 +107,22 @@ def thumbnail(img,sourceFile):
     print("thumbnail succeed")
     return img
 
-#resize the width of image
+#resize width
 def resize_w(width, img, sourceFile):
     if int(width) > 0:
         w, h = img.size
         img = img.resize((int(width), int(h)))
-        print("resize succeed")
+        print("resize width succeed")
     else:
         abort(400)
     return img
 
-#resize the height of image
+#resize height
 def resize_h(height, img, sourceFile):
     if int(height) > 0:
         w, h = img.size
         img = img.resize((int(w), int(height)))
-        print("resize succeed")
+        print("resize height succeed")
     else:
         abort(400)
     return img
