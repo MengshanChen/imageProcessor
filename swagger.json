@@ -1,0 +1,66 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "Image Processor",
+    "termsOfService" : "http://swagger.io/v1",
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/MengshanChen/image/1.0.0",
+  "tags" : [ {
+    "name" : "Image Controller",
+    "description" : "image processor"
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/imageProcessor" : {
+      "post" : {
+        "tags" : [ "Image Controller" ],
+        "summary" : "uploads an image",
+        "description" : "",
+        "operationId" : "uploadFile",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Transforms",
+          "in" : "formData",
+          "description" : "rotate_30,grayscale",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "file",
+          "in" : "formData",
+          "description" : "file to upload",
+          "required" : true,
+          "type" : "file"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "examples" : {
+              "application/json" : "{\n  \"links\": [\n    {\n      \"rel\": \"self\",\n      \"href\": \"/imageProcessor\"\n    }\n  ]\n}"
+            },
+            "schema" : {
+              "type" : "file"
+            }
+          },
+          "400" : {
+            "description" : "Bad request",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : { },
+  "externalDocs" : {
+    "description" : "Find out more about Swagger",
+    "url" : "http://swagger.io"
+  }
+}
