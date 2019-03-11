@@ -24,4 +24,4 @@ def send_data_to_server(request, image_path):
     print('Date: ', response.headers['Date'])  
 
 if __name__ == '__main__':
-    send_data_to_server("flip_h,rotate_360,grayscale,w_400,h_500,rotate_left", "static/images/test.jpg")
+    send_data_to_server("flip_h,rotate_360,grayscale,w_400,h_500,rotate_left", "static/images/test.jpeg")
