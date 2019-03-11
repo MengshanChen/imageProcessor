@@ -92,7 +92,7 @@ After receiving the requests, the API will check the format of the image. Legal 
 
 Then, this API service will use the design pattern called Iterator Pattern. Because all transforms are combined in order into a string, the API will split the string into a list, iterate through the list, identify each transform and call the corresponding helper functions to modify the image. <br />
 
-After transformation, a word “new” will be added to the file name so as to separate the original file and the modified image will be saved in memory. Then, the API sends this new image file to the user.  <br />
+After transformation, a word “new” will be added to the file name so as to separate from the original file and then the modified image will be saved in memory. At last, the API sends this new image file to the user.  <br />
 
 ## Other consideration
 Because this API specifies the format of transform, the API will return an error (400) if the client request does not meet this requirement. 
