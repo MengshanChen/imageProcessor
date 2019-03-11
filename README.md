@@ -6,7 +6,7 @@
 ![architecture](https://user-images.githubusercontent.com/38142465/54103286-2f9e6100-4389-11e9-8ce3-d897de39d37d.png)
 
 ## Description of the architecture
-Since transformation should run quickly and the users do not need to wait for a long time, the architecture will focus on using the server memory. Here is the flow: Clients will send requests with a image and a list of image transforms as part of the HTTP body through HTTPS to the serivce. The service receives the request, maps the endpoint and identifies the operations in the request and execute the transforms in order on the in-memory image. At last, the service sends the image back through HTTPS so that the client can download it. 
+Since transformation should run quickly and the users do not need to wait for a long time, the architecture will focus on using the server memory. Here is how it works: Clients will send requests with a image and a list of image transforms as part of the HTTP body through HTTPS to the serivce. The service receives the request, maps the endpoint and identifies the operations in the request and execute the transforms in order on the in-memory image. At last, the service sends the image back through HTTPS so that the client can download it. 
 
 ## Communication protocols
 This is a REST API which is based on the HTTP protocol. 
