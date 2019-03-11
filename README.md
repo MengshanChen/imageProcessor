@@ -3,13 +3,13 @@
 **Author**: Mengshan Chen <br/>
 
 ## A high level overview of the full system
-![architecture](https://user-images.githubusercontent.com/38142465/54103286-2f9e6100-4389-11e9-8ce3-d897de39d37d.png)
+![architecture-2](https://user-images.githubusercontent.com/38142465/54103679-89ebf180-438a-11e9-93ed-9170e7e879be.png)
 
 ## Description of the architecture
-Since transformation should run quickly and the users do not need to wait for a long time, the architecture will focus on using the server memory. Here is how it works: Clients will send requests with a image and a list of image transforms as part of the HTTP body through HTTPS to the serivce. The service receives the request, maps the endpoint and identifies the operations in the request and execute the transforms in order on the in-memory image. At last, the service sends the image back through HTTPS so that the client can download it. 
+Since transformation should run quickly and the users do not need to wait for a long time, the architecture will focus on using the service memory. Here is how it works: Clients will send requests with a image and a list of image transforms as part of the HTTP body through HTTPS to the API serivce. The service receives the request, maps the endpoint, identifies the operations in the request and execute the transforms in order on the in-memory image. At last, the service sends the image back through HTTPS so that the client can download it. 
 
 ## Communication protocols
-This is a REST API which is based on the HTTP protocol. 
+This will be a REST API which is based on the HTTP protocol. 
 
 ## API overview 
 *	URL: /imageProcessor
@@ -48,7 +48,7 @@ The file called "swagger.json" covers more details.
   ![demo](https://user-images.githubusercontent.com/38142465/54092641-c4826980-434b-11e9-9515-d191b03ded33.png)
   
 ## Specification
-The API covers seven transforms. The client can combine operations into a string, and each one is separated by a comma without spaces and capitals. Also, each one should follow the following formats.  <br />
+The API covers seven transforms. Assume that the client should combine operations into a string, and each one is separated by a comma without spaces and capitals. Also, each one should follow the following formats.  <br />
 For example: flip_h,rotate_360,grayscale,w_400,h_500,rotate_left <br />
 
 | Transfrom | Format |
