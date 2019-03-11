@@ -84,7 +84,6 @@ def flip(mode, img, sourceFile):
 #rotate left, right or angle
 def rotate(angle, img, sourceFile):
     print(angle)
-    #img = img.rotate(-1*int(angle),resample=0, expand=True)
     if(angle=="left"):
         img = img.rotate(90,resample=0, expand=True)
     elif (angle == "right"):
